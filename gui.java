@@ -1,8 +1,14 @@
-// game
+package compiledGame; // compiled files stored in seperate file for neatness
+// requires using different compilation command: javac -d . gui.java
+// run on cmd: java compiledGame.gui for testing purposes
+
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-public class GUI_masterpage extends Frame implements WindowListener{
+
+
+
+public class gui extends Frame implements WindowListener{
   // page title variable
   // page size fixed
   // array of children ?
@@ -10,7 +16,7 @@ public class GUI_masterpage extends Frame implements WindowListener{
 
 
   private void constructor(String newTitle){
-    Frame newWindow = new Frame("New Window");
+    Frame window = new Frame("New Window");
 
     setTitle(newTitle);
     setVisible(true);
@@ -37,8 +43,8 @@ public class GUI_masterpage extends Frame implements WindowListener{
   // end of window methods
 
   public static void main(String[] args){
-    GUI_masterpage master = new GUI_masterpage();
-    master.constructor("Master Page");
+    gui master = new gui();
+    master.constructor("Generic Page");
   }
 
 }
