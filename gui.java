@@ -6,24 +6,16 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-
-
 public class gui extends Frame implements WindowListener{
-  // page title variable
-  // page size fixed
-  // array of children ?
-  // page parent pointer
-
 
   private void constructor(String newTitle){
     Frame window = new Frame("New Window");
 
     setTitle(newTitle);
     setVisible(true);
-    setSize(300,300);
+    setSize(700,700);
     setLayout(null);
     addWindowListener(this); // required to close the window
-
     // declaring generic elements
 
     // adding elements to frame
