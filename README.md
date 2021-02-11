@@ -7,4 +7,4 @@ git commit -m "Commit Message"
 
 git push
 
-git switch <Branchname>
+git checkout <Branchname>
