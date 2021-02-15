@@ -20,8 +20,8 @@ public class gui extends Frame implements WindowListener{
     this.setTitle("Hello World");
     this.setSize(500, 500);
 
-    this.titleLabel = new Label("NEW LABEL");
-    this.add(titleLabel);
+    mainPage Main = new mainPage();
+    this.add(Main);
   }
 
 
@@ -45,13 +45,23 @@ public class gui extends Frame implements WindowListener{
 
   }
 
-private class page1 extends Container{
+public class mainPage extends Container{
   // declare variables here - values assigned elsewhere unless they're like pi
-  Label titleLabel;
-
-  private page1(){
+  Button nav1, nav2, nav3, nav4;
+  private mainPage(){
     // constructor
 
+    // instansiate widgets
+    nav1 = new Button("Join a game");
+    nav2 = new Button("Host a game");
+    nav3 = new Button("How to play");
+    nav4 = new Button("Settings");
+    // add widgets to this
+    this.add(nav1);
+    this.add(nav2);
+    this.add(nav3);
+    this.add(nav4);
+    this.setVisible(true);
   }
 
 
