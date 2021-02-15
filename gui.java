@@ -14,10 +14,15 @@ public class gui extends Frame implements WindowListener{
   // declare variables before implementation to avoid ERROR: not found
 
   // constructor method
-  private void gui(){
+  private gui(){
+
+  }
+
+  private void newChild(){
     page1 newPage = new page1();
     newPage.setVisible(true);
   }
+
 
   // following methods are all required to close the window
   // don't ask AWT is a bit dim
@@ -37,6 +42,7 @@ public class gui extends Frame implements WindowListener{
     master.setVisible(true);
     master.addWindowListener(master);
     // instansiate child classes
+    master.newChild();
 
   }
 
@@ -45,7 +51,7 @@ private class page1 extends gui{
   Label title;
 
   // constructor !
-  private void page1(){
+  private page1(){
     setTitle("FRAME");
     addWindowListener(this);
     // instansiate variables here
