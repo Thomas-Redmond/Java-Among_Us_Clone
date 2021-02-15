@@ -12,15 +12,16 @@ It is not supposed to be visible, and works in the background. It will not have 
 */
 public class gui extends Frame implements WindowListener{
   // declare variables before implementation to avoid ERROR: not found
+  Label titleLabel;
 
   // constructor method
   private gui(){
+    // modify starting values
+    this.setTitle("Hello World");
+    this.setSize(500, 500);
 
-  }
-
-  private void newChild(){
-    page1 newPage = new page1();
-    newPage.setVisible(true);
+    this.titleLabel = new Label("NEW LABEL");
+    this.add(titleLabel);
   }
 
 
@@ -41,30 +42,19 @@ public class gui extends Frame implements WindowListener{
     gui master = new gui();
     master.setVisible(true);
     master.addWindowListener(master);
-    // instansiate child classes
-    master.newChild();
 
   }
 
-private class page1 extends gui{
+private class page1 extends Container{
   // declare variables here - values assigned elsewhere unless they're like pi
-  Label title;
+  Label titleLabel;
 
-  // constructor !
   private page1(){
-    setTitle("FRAME");
-    addWindowListener(this);
-    // instansiate variables here
-    title = new Label();
-
-    // declare text for Labels
-    title.setText("New String");
-
-    // give position data
-    title.setAlignment(Label.CENTER);
-    // add to page
+    // constructor
 
   }
+
+
 
   }
 }
