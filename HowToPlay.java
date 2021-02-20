@@ -8,10 +8,13 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HowToPlay {
 
 	private JFrame frame;
+	private static JButton backbtn;
 
 	/**
 	 * Launch the application.
@@ -56,8 +59,26 @@ public class HowToPlay {
 		txtpnInstructions.setBounds(104, 82, 231, 123);
 		frame.getContentPane().add(txtpnInstructions);
 		
-		JButton btnNewButton = new JButton("Back ");
-		btnNewButton.setBounds(338, 11, 86, 26);
-		frame.getContentPane().add(btnNewButton);
+		JButton backbtn = new JButton("Back ");
+		backbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				mainScreen nw = new mainScreen();
+				nw.setVisible(true);
+				frame.dispose();
+			}
+		});
+		backbtn.setBounds(338, 11, 86, 26);
+		frame.getContentPane().add(backbtn);
+	}
+
+	public void setVisible(boolean b) {
+		frame.setVisible(b);
+		
+	}
+
+	public static void changeButtonStatus(boolean b) {
+		backbtn.setEnabled(b);
+		
 	}
 }

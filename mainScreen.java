@@ -2,21 +2,15 @@ package compiledGame;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
 
-public class mainScreen {
+
+class mainScreen {
 
 	private JFrame frmSuperSpreader;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -34,48 +28,66 @@ public class mainScreen {
 	 * Create the application.
 	 */
 	public mainScreen() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
+	
 		frmSuperSpreader = new JFrame();
+		frmSuperSpreader.getContentPane().setBackground(new Color(255, 160, 122));
+		frmSuperSpreader.getContentPane().setEnabled(false);
 		frmSuperSpreader.getContentPane().setForeground(Color.PINK);
-		//frmSuperSpreader.getContentPane().setForeground("c:\\compiledGame.Images\blobby backround.png");
 		frmSuperSpreader.setTitle("Super Spreader");
 		frmSuperSpreader.setBounds(100, 100, 450, 300);
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSuperSpreader.getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("Host a game");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton hostbtn = new JButton("Host a game");
+		hostbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frmSuperSpreader.setVisible(false);
+				hostGame nw = new hostGame();
+				nw.setVisible(true);
+				frmSuperSpreader.dispose();
 			}
 		});
-		btnNewButton.setBounds(38, 133, 135, 23);
-		frmSuperSpreader.getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Join a game");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		hostbtn.setBounds(38, 133, 135, 23);
+		frmSuperSpreader.getContentPane().add(hostbtn);
+		JButton joinbtn = new JButton("Join a game");
+		joinbtn.addActionListener(new ActionListener() {
+		@Override
 			public void actionPerformed(ActionEvent e) {
+				frmSuperSpreader.setVisible(false);
+				joinAGame nw = new joinAGame();
+				nw.setVisible(true);
+				frmSuperSpreader.dispose();
+				
 			}
 		});
-		btnNewButton_1.setBounds(38, 162, 135, 23);
-		frmSuperSpreader.getContentPane().add(btnNewButton_1);
+		joinbtn.setBounds(38, 162, 135, 23);
+		frmSuperSpreader.getContentPane().add(joinbtn);
 		
-		JButton btnNewButton_2 = new JButton("How to play");
-		btnNewButton_2.setBounds(38, 189, 135, 23);
-		frmSuperSpreader.getContentPane().add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Settings");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton insbtn = new JButton("How to play");
+		insbtn.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
+				frmSuperSpreader.setVisible(false);
+				HowToPlay nw = new HowToPlay();
+				nw.setVisible(true);
+				frmSuperSpreader.dispose();
 			}
 		});
-		btnNewButton_3.setBounds(38, 215, 135, 23);
-		frmSuperSpreader.getContentPane().add(btnNewButton_3);
+		insbtn.setBounds(38, 189, 135, 23);
+		frmSuperSpreader.getContentPane().add(insbtn);
+		
+		JButton settingbtn = new JButton("Settings");
+		settingbtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frmSuperSpreader.setVisible(false);
+				Settings nw = new Settings();
+				nw.setVisible(true);
+				frmSuperSpreader.dispose();
+			}
+		});
+		settingbtn.setBounds(38, 215, 135, 23);
+		frmSuperSpreader.getContentPane().add(settingbtn);
 		
 		JLabel lblNewLabel = new JLabel("SUPER");
 		lblNewLabel.setForeground(Color.WHITE);
@@ -89,4 +101,11 @@ public class mainScreen {
 		lblSpreader.setBounds(10, 51, 145, 38);
 		frmSuperSpreader.getContentPane().add(lblSpreader);
 	}
+
+
+	public void setVisible(boolean b) {
+		frmSuperSpreader.setVisible(b);
+		
+	}
+
 }

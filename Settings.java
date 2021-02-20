@@ -77,7 +77,22 @@ public class Settings {
 		frame.getContentPane().add(iconColour);
 		
 		JButton btnNewButton = new JButton("Back ");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				mainScreen nw = new mainScreen();
+				nw.setVisible(true);
+				frame.dispose();
+			}
+		});
 		btnNewButton.setBounds(338, 11, 86, 26);
 		frame.getContentPane().add(btnNewButton);
 	}
+
+	public void setVisible(boolean b) {
+		frame.setVisible(b);
+		
+	}
+
+	
 }
