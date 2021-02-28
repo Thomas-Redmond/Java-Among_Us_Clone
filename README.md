@@ -7,6 +7,7 @@ git commit -m "Commit Message"
 
 git push
 
+<<<<<<< HEAD
 git switch <Branchname>
 
 
@@ -19,3 +20,6 @@ https://examples.javacodegeeks.com/desktop-java/ide/eclipse/eclipse-window-build
 
 
 
+=======
+git checkout <Branchname>
+>>>>>>> origin/temp_gui
