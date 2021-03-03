@@ -91,4 +91,9 @@ public class HowToPlay {
 		backbtn.setEnabled(b);
 		
 	}
+
+	public static void setEnabled(boolean b) {
+		backbtn.setEnabled(b);
+		
+	}
 }

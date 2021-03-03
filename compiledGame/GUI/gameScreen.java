@@ -2,6 +2,8 @@ package compiledGame;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.time.*;
 import javax.swing.*;
@@ -39,8 +41,12 @@ public class gameScreen {
 	 */
 	public gameScreen() {
 		initialize();
-
-	}
+		frmSuperSpreader.addWindowListener(new WindowAdapter() {
+			public void windowOpened(WindowEvent e) {
+				startTime = LocalDateTime.now();
+				timer.start();
+			}
+	});}
 
 	/**
 	 * Initialise the contents of the frame.
@@ -59,9 +65,12 @@ public class gameScreen {
 		btnNewButton.setBounds(473, 11, 126, 33);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				HowToPlay nw = new HowToPlay();
-				nw.setVisible(true);
-				HowToPlay.changeButtonStatus(false);
+				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use arrow keys on the keyboard to move. Type into the text field and hit the enter key to send the chat",
+			    "How To Play",JOptionPane.PLAIN_MESSAGE);
+				/*
+				 * HowToPlay nw = new HowToPlay(); nw.setVisible(true);
+				 * HowToPlay.setEnabled(false);
+				 */
 			}
 		});
 		frmSuperSpreader.getContentPane().setLayout(null);
@@ -113,10 +122,7 @@ public class gameScreen {
 		frmSuperSpreader.getContentPane().add(timerfield);
 		timerfield.setColumns(10);
 
-	     JButton btn = new JButton("Start");
-	     btn.setBounds(144, 15, 89, 25);
- 		frmSuperSpreader.getContentPane().add(btn);
- 		
+	     
  		textField = new JTextField();
  		textField.setBounds(473, 374, 233, 20);
  		frmSuperSpreader.getContentPane().add(textField);
@@ -126,22 +132,8 @@ public class gameScreen {
  		lblNewLabel_1.setIcon(new ImageIcon(gameScreen.class.getResource("/pictures/picture 8.1.png")));
  		lblNewLabel_1.setBounds(0, 0, 760, 443);
  		frmSuperSpreader.getContentPane().add(lblNewLabel_1);
-         btn.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 if (timer.isRunning()) {
-                     timer.stop();
-                     startTime = null;
-                     btn.setText("Start");
-                 } else {
-                     startTime = LocalDateTime.now();
-                     timer.start();
-                     btn.setText("Stop");
-                 }
-             }
-         });
          
-// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
+ 		// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
          timer = new Timer(500, new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
@@ -150,8 +142,15 @@ public class gameScreen {
                  Duration timeLeft = duration.minus(runningTime);
                  if (timeLeft.isZero() || timeLeft.isNegative()) {
                      timeLeft = Duration.ZERO;
-                     btn.doClick(); // Cheat
+					/*
+					 * if tasksLeft.isZero() { winningScreen nw = new winningScreen();
+					 * nw.setVisible(true); frmSuperSpreader.setVisible(false);
+					 * frmSuperSpreader.dispose(); } else { losingscreen nw = new losingscreen();
+					 * nw.setVisible(true); frmSuperSpreader.setVisible(false);
+					 * frmSuperSpreader.dispose(); }
+					 */
                  }
+                     
 
                  timerfield.setText(format(timeLeft));
              }

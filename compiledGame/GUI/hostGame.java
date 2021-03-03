@@ -49,8 +49,8 @@ public class hostGame {
 		
 		JLabel lblHostAGame = new JLabel("HOST  A  GAME");
 		lblHostAGame.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHostAGame.setBounds(10, 0, 335, 49);
-		lblHostAGame.setForeground(Color.WHITE);
+		lblHostAGame.setBounds(66, 1, 293, 44);
+		lblHostAGame.setForeground(Color.DARK_GRAY);
 		lblHostAGame.setFont(new Font("Tahoma", Font.BOLD, 32));
 		
 		JButton btnNewButton = new JButton("Back ");
@@ -65,25 +65,26 @@ public class hostGame {
 		});
 		
 		nametxt = new JTextField();
-		nametxt.setBounds(114, 157, 137, 20);
+		nametxt.setBounds(124, 157, 137, 20);
 		nametxt.setColumns(10);
 		
 		
 		codetxt = new JTextField();
 		codetxt.setHorizontalAlignment(SwingConstants.CENTER);
-		codetxt.setBounds(114, 124, 137, 20);
+		codetxt.setBounds(124, 113, 137, 20);
 		codetxt.setText("auto generated code");
 		codetxt.setEditable(false);
 		codetxt.setColumns(10);
 		
 		PlayersTxtfield = new JTextField();
-		PlayersTxtfield.setBounds(114, 197, 137, 20);
+		PlayersTxtfield.setBounds(124, 197, 137, 20);
 		PlayersTxtfield.setEditable(false);
 		PlayersTxtfield.setColumns(10);
 		
 		JButton beginGameButton = new JButton("Begin");
-		beginGameButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		beginGameButton.setBounds(82, 265, 119, 26);
+		beginGameButton.setForeground(Color.DARK_GRAY);
+		beginGameButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		beginGameButton.setBounds(82, 241, 119, 35);
 		beginGameButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
@@ -104,18 +105,19 @@ public class hostGame {
 		});
 		
 		JLabel lblNewLabel = new JLabel("Name:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setBounds(28, 155, 279, 20);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setBounds(28, 155, 76, 20);
 		
 		JLabel lblOfPlayers = new JLabel("# of Players:");
-		lblOfPlayers.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblOfPlayers.setBounds(28, 196, 279, 20);
+		lblOfPlayers.setForeground(Color.DARK_GRAY);
+		lblOfPlayers.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblOfPlayers.setBounds(28, 195, 109, 20);
 		
 		JLabel lblGameCode = new JLabel("Game Code:");
-		lblGameCode.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblGameCode.setForeground(Color.BLACK);
-		lblGameCode.setBounds(25, 124, 95, 20);
+		lblGameCode.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblGameCode.setForeground(Color.DARK_GRAY);
+		lblGameCode.setBounds(28, 111, 89, 20);
 		hostf.getContentPane().setLayout(null);
 		hostf.getContentPane().add(lblNewLabel);
 		hostf.getContentPane().add(nametxt);
@@ -129,7 +131,7 @@ public class hostGame {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(hostGame.class.getResource("/pictures/picture 5.jpg")));
-		lblNewLabel_1.setBounds(0, 0, 548, 415);
+		lblNewLabel_1.setBounds(0, 1, 568, 415);
 		hostf.getContentPane().add(lblNewLabel_1);
 	}
 
