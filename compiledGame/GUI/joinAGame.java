@@ -60,21 +60,21 @@ public class joinAGame {
 		JLabel lblJoinAGame = new JLabel("JOIN A GAME");
 		lblJoinAGame.setBackground(SystemColor.textInactiveText);
 		lblJoinAGame.setHorizontalAlignment(SwingConstants.CENTER);
-		lblJoinAGame.setBounds(10, 2, 163, 70);
-		lblJoinAGame.setForeground(SystemColor.infoText);
+		lblJoinAGame.setBounds(32, 11, 163, 70);
+		lblJoinAGame.setForeground(Color.DARK_GRAY);
 		lblJoinAGame.setFont(new Font("Tw Cen MT", Font.BOLD, 27));
 		
 		nameTxtfield = new JTextField();
-		nameTxtfield.setBounds(135, 86, 161, 22);
+		nameTxtfield.setBounds(242, 124, 161, 22);
 		nameTxtfield.setColumns(10);
 		
 		gameCodeTxtfield = new JTextField();
-		gameCodeTxtfield.setBounds(146, 133, 161, 22);
+		gameCodeTxtfield.setBounds(242, 162, 161, 22);
 		gameCodeTxtfield.setColumns(10);
 		
 		JButton beginGameButton = new JButton("Begin");
 		beginGameButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		beginGameButton.setBounds(94, 189, 131, 31);
+		beginGameButton.setBounds(149, 198, 131, 23);
 		beginGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(nameTxtfield.getText().isEmpty() && gameCodeTxtfield.getText().isEmpty() ){
@@ -89,7 +89,7 @@ public class joinAGame {
 			}});
 		
 		JButton btnNewButton_1 = new JButton("Back ");
-		btnNewButton_1.setBounds(338, 11, 86, 31);
+		btnNewButton_1.setBounds(336, 11, 86, 23);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
@@ -100,15 +100,15 @@ public class joinAGame {
 		});
 		
 		lblGameCode = new JLabel("Game Code:");
-		lblGameCode.setForeground(SystemColor.text);
+		lblGameCode.setForeground(Color.DARK_GRAY);
 		lblGameCode.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblGameCode.setBounds(26, 131, 131, 20);
+		lblGameCode.setBounds(59, 160, 141, 20);
 		frame.getContentPane().setLayout(null);
 		
 		lblNewLabel = new JLabel("Name:");
-		lblNewLabel.setForeground(SystemColor.text);
+		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setBackground(SystemColor.scrollbar);
-		lblNewLabel.setBounds(26, 83, 115, 23);
+		lblNewLabel.setBounds(59, 121, 115, 23);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
 		frame.getContentPane().add(lblNewLabel);
 		frame.getContentPane().add(lblJoinAGame);

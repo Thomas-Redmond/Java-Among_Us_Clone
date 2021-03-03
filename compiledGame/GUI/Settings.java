@@ -53,12 +53,13 @@ public class Settings {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblSettings = new JLabel("SETTINGS");
-		lblSettings.setBounds(10, 11, 194, 38);
-		lblSettings.setForeground(Color.WHITE);
+		lblSettings.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSettings.setBounds(46, 11, 150, 38);
+		lblSettings.setForeground(Color.DARK_GRAY);
 		lblSettings.setFont(new Font("Tw Cen MT", Font.BOLD, 27));
 		
 		JButton beginGameButton = new JButton("Save");
-		beginGameButton.setBounds(48, 231, 214, 29);
+		beginGameButton.setBounds(122, 206, 214, 29);
 		beginGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null,"Your settings have been saved :)"); 
@@ -66,21 +67,22 @@ public class Settings {
 		});
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Voice Chat");
-		rdbtnNewRadioButton.setBounds(102, 99, 160, 23);
+		rdbtnNewRadioButton.setBackground(Color.LIGHT_GRAY);
+		rdbtnNewRadioButton.setBounds(234, 108, 141, 23);
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
 		JRadioButton rdbtnTextChat = new JRadioButton("Text Chat");
-		rdbtnTextChat.setBackground(SystemColor.control);
-		rdbtnTextChat.setBounds(102, 136, 160, 23);
+		rdbtnTextChat.setBackground(Color.LIGHT_GRAY);
+		rdbtnTextChat.setBounds(234, 134, 141, 23);
 		rdbtnTextChat.setHorizontalAlignment(SwingConstants.CENTER);
 		rdbtnTextChat.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
 		Choice iconColour = new Choice();
-		iconColour.setBounds(121, 177, 141, 20);
+		iconColour.setBounds(234, 175, 141, 20);
 		
 		JButton btnNewButton = new JButton("Back ");
-		btnNewButton.setBounds(316, 11, 112, 29);
+		btnNewButton.setBounds(336, 11, 92, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
@@ -99,15 +101,15 @@ public class Settings {
 		
 		JLabel lblNewLabel = new JLabel("Opt. in or out for:");
 		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setForeground(SystemColor.text);
+		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel.setBounds(10, 72, 204, 15);
+		lblNewLabel.setBounds(90, 112, 235, 15);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Icon Colour:");
-		lblNewLabel_1.setForeground(SystemColor.text);
+		lblNewLabel_1.setForeground(Color.DARK_GRAY);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblNewLabel_1.setBounds(10, 177, 118, 20);
+		lblNewLabel_1.setBounds(90, 175, 118, 20);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
