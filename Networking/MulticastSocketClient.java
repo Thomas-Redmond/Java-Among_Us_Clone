@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
