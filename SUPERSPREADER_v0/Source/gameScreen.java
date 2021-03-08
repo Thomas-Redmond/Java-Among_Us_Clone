@@ -46,7 +46,8 @@ public class gameScreen {
 				startTime = LocalDateTime.now();
 				timer.start();
 			}
-	});}
+		});
+	}
 
 	/**
 	 * Initialise the contents of the frame.
@@ -167,4 +168,5 @@ public class gameScreen {
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
 	}
+
 }

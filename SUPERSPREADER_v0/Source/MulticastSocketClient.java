@@ -33,7 +33,7 @@ public class MulticastSocketClient{
     // byte[] buf = new byte[256];
   }
 
-  private MulticastSocketClient() throws IOException, UnknownHostException, InterruptedException{
+  public MulticastSocketClient() throws IOException, UnknownHostException, InterruptedException{
     // constructor class
 
     INET_ADDR = "224.0.0.3";                  // address of group
