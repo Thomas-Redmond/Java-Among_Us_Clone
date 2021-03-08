@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
@@ -122,17 +122,17 @@ public class gameScreen {
 		frmSuperSpreader.getContentPane().add(timerfield);
 		timerfield.setColumns(10);
 
-	     
+
  		textField = new JTextField();
  		textField.setBounds(473, 374, 233, 20);
  		frmSuperSpreader.getContentPane().add(textField);
  		textField.setColumns(10);
- 		
+
  		JLabel lblNewLabel_1 = new JLabel("New label");
  		lblNewLabel_1.setIcon(new ImageIcon(gameScreen.class.getResource("/pictures/picture 8.1.png")));
  		lblNewLabel_1.setBounds(0, 0, 760, 443);
  		frmSuperSpreader.getContentPane().add(lblNewLabel_1);
-         
+
  		// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
          timer = new Timer(500, new ActionListener() {
              @Override
@@ -150,7 +150,7 @@ public class gameScreen {
 					 * frmSuperSpreader.dispose(); }
 					 */
                  }
-                     
+
 
                  timerfield.setText(format(timeLeft));
              }
@@ -168,6 +168,3 @@ public class gameScreen {
 		frmSuperSpreader.setVisible(b);
 	}
 }
-
-
-

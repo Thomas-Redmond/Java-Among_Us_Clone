@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -56,22 +56,22 @@ public class joinAGame {
 		frame.getContentPane().setBackground(new Color(210, 180, 140));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JLabel lblJoinAGame = new JLabel("JOIN A GAME");
 		lblJoinAGame.setBackground(SystemColor.textInactiveText);
 		lblJoinAGame.setHorizontalAlignment(SwingConstants.CENTER);
 		lblJoinAGame.setBounds(32, 11, 163, 70);
 		lblJoinAGame.setForeground(Color.DARK_GRAY);
 		lblJoinAGame.setFont(new Font("Tw Cen MT", Font.BOLD, 27));
-		
+
 		nameTxtfield = new JTextField();
 		nameTxtfield.setBounds(242, 124, 161, 22);
 		nameTxtfield.setColumns(10);
-		
+
 		gameCodeTxtfield = new JTextField();
 		gameCodeTxtfield.setBounds(242, 162, 161, 22);
 		gameCodeTxtfield.setColumns(10);
-		
+
 		JButton beginGameButton = new JButton("Begin");
 		beginGameButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		beginGameButton.setBounds(149, 198, 131, 23);
@@ -87,7 +87,7 @@ public class joinAGame {
 				frame.dispose();
 			}
 			}});
-		
+
 		JButton btnNewButton_1 = new JButton("Back ");
 		btnNewButton_1.setBounds(336, 11, 86, 23);
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -98,13 +98,13 @@ public class joinAGame {
 				frame.dispose();
 			}
 		});
-		
+
 		lblGameCode = new JLabel("Game Code:");
 		lblGameCode.setForeground(Color.DARK_GRAY);
 		lblGameCode.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblGameCode.setBounds(59, 160, 141, 20);
 		frame.getContentPane().setLayout(null);
-		
+
 		lblNewLabel = new JLabel("Name:");
 		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setBackground(SystemColor.scrollbar);
@@ -117,7 +117,7 @@ public class joinAGame {
 		frame.getContentPane().add(lblGameCode);
 		frame.getContentPane().add(gameCodeTxtfield);
 		frame.getContentPane().add(beginGameButton);
-		
+
 		lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(joinAGame.class.getResource("/pictures/picture 1.png")));
 		lblNewLabel_1.setBounds(0, 0, 444, 271);
@@ -126,7 +126,7 @@ public class joinAGame {
 
 	public void setVisible(boolean b) {
 		frame.setVisible(b);
-		
+
 	}
 
 }

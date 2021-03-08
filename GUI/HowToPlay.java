@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -50,17 +50,17 @@ public class HowToPlay {
 		frmSuperSpreader.getContentPane().setBackground(new Color(245, 222, 179));
 		frmSuperSpreader.setBounds(100, 100, 560, 340);
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JLabel lblHowToPlay = new JLabel("HOW TO PLAY");
 		lblHowToPlay.setBounds(10, 11, 196, 38);
 		lblHowToPlay.setForeground(Color.WHITE);
 		lblHowToPlay.setFont(new Font("Tw Cen MT", Font.BOLD, 27));
-		
+
 		JTextPane txtpnInstructions = new JTextPane();
 		txtpnInstructions.setBounds(50, 57, 429, 213);
 		txtpnInstructions.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtpnInstructions.setText("Instructions");
-		
+
 		JButton backbtn = new JButton("Back ");
 		backbtn.setBounds(338, 11, 196, 28);
 		backbtn.addActionListener(new ActionListener() {
@@ -75,7 +75,7 @@ public class HowToPlay {
 		frmSuperSpreader.getContentPane().add(lblHowToPlay);
 		frmSuperSpreader.getContentPane().add(backbtn);
 		frmSuperSpreader.getContentPane().add(txtpnInstructions);
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(HowToPlay.class.getResource("/pictures/picture 3.png")));
 		lblNewLabel.setBounds(-26, 0, 619, 395);
@@ -84,16 +84,16 @@ public class HowToPlay {
 
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
-		
+
 	}
 
 	public static void changeButtonStatus(boolean b) {
 		backbtn.setEnabled(b);
-		
+
 	}
 
 	public static void setEnabled(boolean b) {
 		backbtn.setEnabled(b);
-		
+
 	}
 }

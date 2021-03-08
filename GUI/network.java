@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 // compilation help
 // javac -d . network.java

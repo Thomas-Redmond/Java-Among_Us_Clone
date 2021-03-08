@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -8,9 +8,9 @@ import javax.swing.JButton;
 public class taskScreen {
 
 	private JFrame frame;
-	
+
 	// https://docs.oracle.com/javase/tutorial/uiswing/components/dialog.html
-	
+
 
 	/**
 	 * Launch the application.
@@ -43,7 +43,7 @@ public class taskScreen {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(156, 227, 135, 23);
 		frame.getContentPane().add(btnSubmit);

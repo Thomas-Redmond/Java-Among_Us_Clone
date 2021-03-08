@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -27,7 +27,7 @@ class mainScreen {
 	 * Create the application.
 	 */
 	public mainScreen() {
-	
+
 		frmSuperSpreader = new JFrame();
 		frmSuperSpreader.getContentPane().setBackground(new Color(255, 160, 122));
 		frmSuperSpreader.getContentPane().setEnabled(false);
@@ -36,7 +36,7 @@ class mainScreen {
 		frmSuperSpreader.setBounds(100, 100, 444, 302);
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSuperSpreader.getContentPane().setLayout(null);
-		
+
 		JButton hostbtn = new JButton("Host a game");
 		hostbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		hostbtn.addActionListener(new ActionListener() {
@@ -47,7 +47,7 @@ class mainScreen {
 				frmSuperSpreader.dispose();
 			}
 		});
-		
+
 		JLabel lblSpeader = new JLabel("SPEADER");
 		lblSpeader.setBackground(SystemColor.textHighlight);
 		lblSpeader.setForeground(SystemColor.menu);
@@ -65,12 +65,12 @@ class mainScreen {
 				joinAGame nw = new joinAGame();
 				nw.setVisible(true);
 				frmSuperSpreader.dispose();
-				
+
 			}
 		});
 		joinbtn.setBounds(30, 141, 154, 32);
 		frmSuperSpreader.getContentPane().add(joinbtn);
-		
+
 		JButton insbtn = new JButton("How to play");
 		insbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		insbtn.addActionListener(new ActionListener() {
@@ -84,7 +84,7 @@ class mainScreen {
 		});
 		insbtn.setBounds(30, 184, 154, 32);
 		frmSuperSpreader.getContentPane().add(insbtn);
-		
+
 		JButton settingbtn = new JButton("Settings");
 		settingbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		settingbtn.addActionListener(new ActionListener() {
@@ -98,14 +98,14 @@ class mainScreen {
 		});
 		settingbtn.setBounds(30, 227, 154, 32);
 		frmSuperSpreader.getContentPane().add(settingbtn);
-		
+
 		JLabel lblNewLabel = new JLabel("SUPER");
 		lblNewLabel.setBackground(SystemColor.text);
 		lblNewLabel.setForeground(SystemColor.menu);
 		lblNewLabel.setFont(new Font("Verdana", Font.BOLD, 29));
 		lblNewLabel.setBounds(10, 11, 174, 38);
 		frmSuperSpreader.getContentPane().add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon(mainScreen.class.getResource("/pictures/picture 4.png")));
 		lblNewLabel_1.setBounds(-57, 0, 506, 299);
@@ -115,8 +115,7 @@ class mainScreen {
 
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
-		
+
 	}
 
 }
-

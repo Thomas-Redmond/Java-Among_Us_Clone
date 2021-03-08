@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -47,7 +47,7 @@ public class gameContext {
 		frmSuperSpreader.getContentPane().setBackground(new Color(106, 90, 205));
 		frmSuperSpreader.setBounds(100, 100, 594, 356);
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		JButton beginGameButton = new JButton("Continue");
 		beginGameButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		beginGameButton.setBounds(173, 271, 243, 29);
@@ -60,7 +60,7 @@ public class gameContext {
 			}
 		});
 		frmSuperSpreader.getContentPane().setLayout(null);
-		
+
 		JTextPane txtpnItsYouAnd = new JTextPane();
 		txtpnItsYouAnd.setBounds(54, 39, 481, 124);
 		txtpnItsYouAnd.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -74,6 +74,6 @@ public class gameContext {
 
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
-		
+
 	}
 }

@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -42,11 +42,11 @@ public class losingscreen {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setBounds(156, 227, 135, 23);
 		frame.getContentPane().add(btnMainMenu);
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(losingscreen.class.getResource("/pictures/picture 7.jpg")));
 		lblNewLabel.setBounds(-58, 0, 492, 352);

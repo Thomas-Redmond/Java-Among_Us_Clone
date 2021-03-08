@@ -1,4 +1,4 @@
-package compiledGame;
+package compiled;
 
 import java.awt.EventQueue;
 
@@ -42,11 +42,11 @@ public class winningScreen {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setBounds(156, 227, 135, 23);
 		frame.getContentPane().add(btnMainMenu);
-		
+
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(winningScreen.class.getResource("/pictures/picture 6.png")));
 		lblNewLabel.setBounds(-61, 0, 495, 357);
