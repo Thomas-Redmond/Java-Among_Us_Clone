@@ -4,10 +4,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
-public class gameContext {
+public class winningScreen {
 
 	private JFrame frame;
 
@@ -18,7 +18,7 @@ public class gameContext {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					gameContext window = new gameContext();
+					winningScreen window = new winningScreen();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +30,7 @@ public class gameContext {
 	/**
 	 * Create the application.
 	 */
-	public gameContext() {
+	public winningScreen() {
 		initialize();
 	}
 
@@ -43,13 +43,14 @@ public class gameContext {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton beginGameButton = new JButton("Continue");
-		beginGameButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		beginGameButton.setBounds(173, 227, 89, 23);
-		frame.getContentPane().add(beginGameButton);
+		JButton btnMainMenu = new JButton("Main Menu");
+		btnMainMenu.setBounds(156, 227, 135, 23);
+		frame.getContentPane().add(btnMainMenu);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(winningScreen.class.getResource("/pictures/picture 6.png")));
+		lblNewLabel.setBounds(-61, 0, 495, 357);
+		frame.getContentPane().add(lblNewLabel);
 	}
 
 }

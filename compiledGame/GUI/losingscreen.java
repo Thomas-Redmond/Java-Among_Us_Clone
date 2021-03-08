@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class losingscreen {
 
@@ -44,6 +46,11 @@ public class losingscreen {
 		JButton btnMainMenu = new JButton("Main Menu");
 		btnMainMenu.setBounds(156, 227, 135, 23);
 		frame.getContentPane().add(btnMainMenu);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(losingscreen.class.getResource("/pictures/picture 7.jpg")));
+		lblNewLabel.setBounds(-58, 0, 492, 352);
+		frame.getContentPane().add(lblNewLabel);
 	}
 
 }
