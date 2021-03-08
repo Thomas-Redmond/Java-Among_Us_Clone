@@ -13,3 +13,8 @@ Compile and Run exe.java from SUPERSPREADER to play the game.
 Apologies.
 
 ---------------------
+
+To compile code in Directory Sources.
+javac -d . *.java
+
+Then cut the newly created Classes file to main SUPERSPREADER directory and replace old Classes with new.
