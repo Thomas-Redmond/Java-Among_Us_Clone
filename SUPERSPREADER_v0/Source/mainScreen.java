@@ -37,32 +37,20 @@ public class mainScreen {
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSuperSpreader.getContentPane().setLayout(null);
 
-		JButton hostbtn = new JButton("Host a game");
-		hostbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		hostbtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frmSuperSpreader.setVisible(false);
-				hostGame nw = new hostGame();
-				nw.setVisible(true);
-				frmSuperSpreader.dispose();
-			}
-		});
-
 		JLabel lblSpeader = new JLabel("SPEADER");
 		lblSpeader.setBackground(SystemColor.textHighlight);
 		lblSpeader.setForeground(SystemColor.menu);
 		lblSpeader.setFont(new Font("Verdana", Font.BOLD, 29));
 		lblSpeader.setBounds(39, 49, 174, 38);
 		frmSuperSpreader.getContentPane().add(lblSpeader);
-		hostbtn.setBounds(30, 98, 154, 32);
-		frmSuperSpreader.getContentPane().add(hostbtn);
-		JButton joinbtn = new JButton("Join a game");
+		
+		JButton joinbtn = new JButton("Begin Game");
 		joinbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		joinbtn.addActionListener(new ActionListener() {
 		@Override
 			public void actionPerformed(ActionEvent e) {
 				frmSuperSpreader.setVisible(false);
-				joinAGame nw = new joinAGame();
+				gameContext nw = new gameContext();
 				nw.setVisible(true);
 				frmSuperSpreader.dispose();
 
