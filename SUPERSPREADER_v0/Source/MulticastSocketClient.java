@@ -1,4 +1,4 @@
-package Classes;
+package Source;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

@@ -1,4 +1,4 @@
-package Classes;
+package Source;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.time.*;
 import javax.swing.*;
+
 import java.awt.*;
 
 
@@ -100,8 +101,12 @@ public class gameScreen {
 		txtpnChatLog.setText("chat log");
 		frmSuperSpreader.getContentPane().add(txtpnChatLog);
 
+		
+		
 		JPanel panel = new JPanel();
 		panel.setBounds(20, 55, 428, 339);
+		panel.add(new GameFrame());
+		panel.setVisible(true);
 		frmSuperSpreader.getContentPane().add(panel);
 
 		JLabel taskLabel = new JLabel("Task's left:");

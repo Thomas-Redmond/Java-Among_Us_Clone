@@ -1,29 +1,66 @@
-package movement.test;
+package Source;
 
-import java.awt.Rectangle;
-import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.event.KeyEvent;
 
-public class Player extends Rectangle{
-   	private int dx, dy;
+import javax.swing.ImageIcon;
 
-    public Player(int x, int y, int width, int height, int dx, int dy){
+public class player extends entity{
 
-        setBounds(x,y,width,height);
-        this.dx=dx;
-        this.dy=dy;
-    }
-    public void tick(){
-        this.x+=dx;
-        this.y+=dy;
-    }
-    public void draw(Graphics g){
-        g.fillRect(this.x, this.y, this.width, this.height);
-    }
-    public void setDx(int dx){
-        this.dx=dx;
-    }
-    public void setDy(int dy){
-        this.dy=dy;
-    }
+	
+	int velx=0,vely=0;
+	public player(int x, int y) {
+		super(x, y);
+		
+	}
+	
+	public void update()
+	{
+		y+=vely;
+		x+=velx;
+		
+	}
+	
+	public void draw(Graphics2D g2d) {
+		g2d.drawImage(getPlayerImg(),x,y,null);
+	}
+	
+	public Image getPlayerImg() {
+		ImageIcon ic = new ImageIcon("blobby.jpg");
+		Image i = ic.getImage();
+		Image si= i.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
+		ic= new ImageIcon(si);
+		return si;
+	}
+	
+	public void keyPressed(KeyEvent e) {
+		int key=e.getKeyCode();
+		
+		if (key == KeyEvent.VK_W) {
+			vely = -2;
+		}else if (key == KeyEvent.VK_S) {
+			vely = 2;
+		}else if(key == KeyEvent.VK_A) {
+			velx = -2;
+		}else if(key == KeyEvent.VK_D) {
+			velx= 2;
+		}
+		
+	}
+	public void keyReleased(KeyEvent e) {
+		int key=e.getKeyCode();
+		
+		if (key == KeyEvent.VK_W) {
+			vely = 0;
+		}else if (key == KeyEvent.VK_S) {
+			vely = 0;
+		}else if(key == KeyEvent.VK_A) {
+			velx = 0;
+		}else if(key == KeyEvent.VK_D) {
+			velx= 0;
+		}
+	}
 
 }
+
