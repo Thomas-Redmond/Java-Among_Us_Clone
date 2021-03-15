@@ -1,4 +1,4 @@
-package Source;
+package Classes;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionListener;
@@ -59,15 +59,15 @@ public class gameScreen {
 		frmSuperSpreader.setResizable(false);
 		frmSuperSpreader.setTitle("SUPER SPREADER");
 		frmSuperSpreader.setBounds(100, 100, 766, 469);
+		frmSuperSpreader.setVisible(true);
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSuperSpreader.setLocationRelativeTo(null);
-
 
 		JButton btnNewButton = new JButton("HELP");
 		btnNewButton.setBounds(473, 11, 126, 33);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use arrow keys on the keyboard to move. Type into the text field and hit the enter key to send the chat",
+				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use W, A, S, D on the keyboard to move. Type into the text field and hit the enter key to send the chat",
 			    "How To Play",JOptionPane.PLAIN_MESSAGE);
 				/*
 				 * HowToPlay nw = new HowToPlay(); nw.setVisible(true);
@@ -101,13 +101,9 @@ public class gameScreen {
 		txtpnChatLog.setText("chat log");
 		frmSuperSpreader.getContentPane().add(txtpnChatLog);
 
-		
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(20, 55, 428, 339);
-		panel.add(new GameFrame());
-		panel.setVisible(true);
-		frmSuperSpreader.getContentPane().add(panel);
+		GameFrame g = new GameFrame();
+		g.setBounds(20, 55, 428, 339);
+		frmSuperSpreader.getContentPane().add(g);
 
 		JLabel taskLabel = new JLabel("Task's left:");
 		taskLabel.setForeground(Color.WHITE);

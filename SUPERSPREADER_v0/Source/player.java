@@ -1,4 +1,4 @@
-package Source;
+package Classes;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -27,7 +27,7 @@ public class player extends entity{
 	}
 	
 	public Image getPlayerImg() {
-		ImageIcon ic = new ImageIcon("blobby.jpg");
+		ImageIcon ic = new ImageIcon("Objects/blobby.jpg");
 		Image i = ic.getImage();
 		Image si= i.getScaledInstance(20, 20, java.awt.Image.SCALE_SMOOTH);
 		ic= new ImageIcon(si);

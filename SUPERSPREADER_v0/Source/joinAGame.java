@@ -1,4 +1,4 @@
-package Source;
+package Classes;
 
 import java.awt.EventQueue;
 

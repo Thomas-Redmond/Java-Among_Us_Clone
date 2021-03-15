@@ -1,8 +1,11 @@
-package Source;
+package Classes;
 
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,8 +19,6 @@ public class GameFrame extends JPanel implements ActionListener{
 	player Player;
 	public GameFrame() {
 		setFocusable(true);
-		
-		
 		Player = new player(100,100);
 		addKeyListener(new keyadapt(Player));
 		mainTimer = new Timer(10,this);
