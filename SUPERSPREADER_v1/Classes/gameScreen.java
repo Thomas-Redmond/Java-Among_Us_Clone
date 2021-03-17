@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.time.*;
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 
 import java.awt.*;
 
@@ -101,10 +102,25 @@ public class gameScreen {
 		txtpnChatLog.setText("chat log");
 		frmSuperSpreader.getContentPane().add(txtpnChatLog);
 
+		JPanel panel = new JPanel();
+		panel.setBounds(20, 55, 428, 339);
+		frmSuperSpreader.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JInternalFrame internalFrame = new JInternalFrame("");
+		internalFrame.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		internalFrame.setEnabled(false);
+		internalFrame.setBackground(UIManager.getColor("TextField.light"));
+		internalFrame.setForeground(UIManager.getColor("TextField.light"));
+		internalFrame.setFrameIcon(null);
+		internalFrame.setBounds(0, 0, 428, 339);
+		panel.add(internalFrame);
 		GameFrame g = new GameFrame();
-		g.setBounds(20, 55, 428, 339);
-		frmSuperSpreader.getContentPane().add(g);
+        internalFrame.add(g);
+		internalFrame.setVisible(true);
 
+
+		
 		JLabel taskLabel = new JLabel("Task's left:");
 		taskLabel.setForeground(Color.WHITE);
 		taskLabel.setBounds(10, 14, 91, 23);
