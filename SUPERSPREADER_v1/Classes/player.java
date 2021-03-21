@@ -37,13 +37,13 @@ public class player extends entity{
 	public void keyPressed(KeyEvent e) {
 		int key=e.getKeyCode();
 		
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_UP) {
 			vely = -2;
-		}else if (key == KeyEvent.VK_S) {
+		}else if (key == KeyEvent.VK_DOWN) {
 			vely = 2;
-		}else if(key == KeyEvent.VK_A) {
+		}else if(key == KeyEvent.VK_LEFT) {
 			velx = -2;
-		}else if(key == KeyEvent.VK_D) {
+		}else if(key == KeyEvent.VK_RIGHT) {
 			velx= 2;
 		}
 		
@@ -51,13 +51,13 @@ public class player extends entity{
 	public void keyReleased(KeyEvent e) {
 		int key=e.getKeyCode();
 		
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_UP) {
 			vely = 0;
-		}else if (key == KeyEvent.VK_S) {
+		}else if (key == KeyEvent.VK_DOWN) {
 			vely = 0;
-		}else if(key == KeyEvent.VK_A) {
+		}else if(key == KeyEvent.VK_LEFT) {
 			velx = 0;
-		}else if(key == KeyEvent.VK_D) {
+		}else if(key == KeyEvent.VK_RIGHT) {
 			velx= 0;
 		}
 	}
