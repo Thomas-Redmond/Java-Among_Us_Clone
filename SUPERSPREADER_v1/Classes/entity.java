@@ -19,6 +19,11 @@ public class entity {
 	}
 	
 	public void draw(Graphics2D g2d) {
+	
+	}
+
+	public void paintComponent(Graphics2D g2d) {
+		// TODO Auto-generated method stub
 		
 	}
 
