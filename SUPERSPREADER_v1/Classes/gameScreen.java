@@ -197,7 +197,6 @@ public class gameScreen {
 		return String.format("%02dm %02ds", mins, seconds);
 	}
 
-
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
 	}
