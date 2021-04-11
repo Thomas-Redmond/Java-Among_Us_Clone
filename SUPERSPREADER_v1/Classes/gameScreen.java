@@ -18,9 +18,9 @@ public class gameScreen {
 	public JLabel timelabel;
 	private JTextField timerfield;
 	private LocalDateTime startTime;
-    private Timer timer;
-    private Duration duration = Duration.ofMinutes(15);
-    private JTextField textField;
+	private Timer timer;
+	private Duration duration = Duration.ofMinutes(15);
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -69,7 +69,7 @@ public class gameScreen {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use W, A, S, D on the keyboard to move. Type into the text field and hit the enter key to send the chat",
-			    "How To Play",JOptionPane.PLAIN_MESSAGE);
+						"How To Play",JOptionPane.PLAIN_MESSAGE);
 				/*
 				 * HowToPlay nw = new HowToPlay(); nw.setVisible(true);
 				 * HowToPlay.setEnabled(false);
@@ -106,7 +106,7 @@ public class gameScreen {
 		panel.setBounds(20, 55, 428, 339);
 		frmSuperSpreader.getContentPane().add(panel);
 		panel.setLayout(null);
-		
+
 		JInternalFrame internalFrame = new JInternalFrame("");
 		internalFrame.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		internalFrame.setEnabled(false);
@@ -116,12 +116,12 @@ public class gameScreen {
 		internalFrame.setBounds(0, 0, 428, 339);
 		panel.add(internalFrame);
 		GameFrame g = new GameFrame();
-        internalFrame.add(g);
+		internalFrame.add(g);
 		internalFrame.setVisible(true);
 
 
-		
-		JLabel taskLabel = new JLabel("Task's left:");
+
+		JLabel taskLabel = new JLabel("Task's left:" + tasksRemaining());
 		taskLabel.setForeground(Color.WHITE);
 		taskLabel.setBounds(10, 14, 91, 23);
 		taskLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -141,45 +141,61 @@ public class gameScreen {
 		timerfield.setColumns(10);
 
 
- 		textField = new JTextField();
- 		textField.setBounds(473, 374, 233, 20);
- 		frmSuperSpreader.getContentPane().add(textField);
- 		textField.setColumns(10);
+		textField = new JTextField();
+		textField.setBounds(473, 374, 233, 20);
+		frmSuperSpreader.getContentPane().add(textField);
+		textField.setColumns(10);
 
- 		JLabel lblNewLabel_1 = new JLabel("New label");
- 		lblNewLabel_1.setIcon(new ImageIcon(gameScreen.class.getResource("/Objects/picture 8.1.png")));
- 		lblNewLabel_1.setBounds(0, 0, 760, 443);
- 		frmSuperSpreader.getContentPane().add(lblNewLabel_1);
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon(gameScreen.class.getResource("/Objects/picture 8.1.png")));
+		lblNewLabel_1.setBounds(0, 0, 760, 443);
+		frmSuperSpreader.getContentPane().add(lblNewLabel_1);
 
- 		// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
-         timer = new Timer(500, new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 LocalDateTime now = LocalDateTime.now();
-                 Duration runningTime = Duration.between(startTime, now);
-                 Duration timeLeft = duration.minus(runningTime);
-                 if (timeLeft.isZero() || timeLeft.isNegative()) {
-                     timeLeft = Duration.ZERO;
-					/*
-					 * if tasksLeft.isZero() { winningScreen nw = new winningScreen();
-					 * nw.setVisible(true); frmSuperSpreader.setVisible(false);
-					 * frmSuperSpreader.dispose(); } else { losingscreen nw = new losingscreen();
-					 * nw.setVisible(true); frmSuperSpreader.setVisible(false);
-					 * frmSuperSpreader.dispose(); }
-					 */
-                 }
+		// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
+		timer = new Timer(500, new ActionListener() {
+			@Override
+			
+			public void actionPerformed(ActionEvent e) {
+				LocalDateTime now = LocalDateTime.now();
+				Duration runningTime = Duration.between(startTime, now);
+				Duration timeLeft = duration.minus(runningTime);
+			
+				if (timeLeft.isZero() || timeLeft.isNegative()) {
+					gameLost();	
+				}
+				else if (tasksRemaining() == 0) { 
+					gameWon();
+					
+				}  
+				timerfield.setText(format(timeLeft));
+			}
+		});
+	}
 
+	public void gameLost() {
+		frmSuperSpreader.setVisible(false);
+		losingscreen nw = new losingscreen();
+		nw.setVisible(true); 
+		frmSuperSpreader.dispose();
+		
+	}
+	
+	public void gameWon() {
+		frmSuperSpreader.setVisible(false);
+		winningScreen nw = new winningScreen();
+		nw.setVisible(true); 
+		frmSuperSpreader.dispose(); 
+	}
+	private int tasksRemaining() {
+		int tasksleft = Classes.GameFrame.taskCounter;
+		return tasksleft;
+	}
 
-                 timerfield.setText(format(timeLeft));
-             }
-         });
-     }
-
-     protected String format(Duration duration) {
-         long mins = duration.toMinutes();
-         long seconds = duration.minusMinutes(mins).toMillis() / 1000;
-         return String.format("%02dm %02ds", mins, seconds);
-     }
+	protected String format(Duration duration) {
+		long mins = duration.toMinutes();
+		long seconds = duration.minusMinutes(mins).toMillis() / 1000;
+		return String.format("%02dm %02ds", mins, seconds);
+	}
 
 
 	public void setVisible(boolean b) {

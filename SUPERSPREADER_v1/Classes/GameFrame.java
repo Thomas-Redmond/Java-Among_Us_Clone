@@ -14,8 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+@SuppressWarnings("serial")
 public class GameFrame extends JPanel implements ActionListener{
-
+	
 	Timer mainTimer;
 	player Player;
 	task Task1;
@@ -23,26 +24,28 @@ public class GameFrame extends JPanel implements ActionListener{
 	task Task3;
 	task Task4;
 	task Task5;
-	int taskCounter = 5;
-
+	static int taskCounter;
+	
 	public GameFrame() {
 		setFocusable(true);
-		// create new player, and new blobby monster
 		Player = new player(100,100);
-		monster = new blobby(0,0);
-
+		taskCounter = 5;
 		addKeyListener(new keyadapt(Player));
 		Task1 = new task(xcoord(),ycoord());
 		Task2 = new task(xcoord(),ycoord());
 		Task3 = new task(xcoord(),ycoord());
 		Task4 = new task(xcoord(),ycoord());
-		Task5 = new task(xcoord(),ycoord());
+		Task5 = new task(xcoord(),ycoord());	
 		mainTimer = new Timer(15,this);
 		mainTimer.start();
-
-
+		
+		
 	}
-
+	
+	public int tasksRemaining() {
+		return taskCounter;
+	}
+	
 	public void paint(Graphics g) {
 		super.paint(g);
 		Graphics2D g2d= (Graphics2D) g;
@@ -53,37 +56,77 @@ public class GameFrame extends JPanel implements ActionListener{
 		Task4.draw(g2d);
 		Task5.draw(g2d);
 	}
-
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();
 		Player.update();
-		monster.chase(player.x, player.y);
-		//monster.update()
 
-		if (sameCoords(Player, Task1)==true){
-			task(Task1);
+		if (sameCoords(Player, Task1)==true){			
+			if (task(Task1)==true) {
+					taskCounter --;
+					Task1.dispose();
+					repaint();
+			}
+			else {
+				Task1 = new task(xcoord(),ycoord());
+				repaint();
+				Player.update();
+			}
 		}
 		if (sameCoords(Player, Task2)==true) {
-			task(Task2);
+			if (task(Task2)==true) {
+				taskCounter --;
+				Task2.dispose();
+				repaint();
+		}
+			else {
+				Task2 = new task(xcoord(),ycoord());
+				repaint();
+				Player.update();
+			}
 		}
 
 		if (sameCoords(Player, Task3)==true) {
-			task(Task3);
+			if (task(Task3)==true) {
+				taskCounter --;
+				Task3.dispose();
+				repaint();
 		}
-
+			else {
+				Task3 = new task(xcoord(),ycoord());
+				repaint();
+				Player.update();
+			}
+		}
 		if (sameCoords(Player, Task4)==true) {
-			task(Task4);
+			if (task(Task4)==true) {
+				taskCounter --;
+				Task4.dispose();
+				repaint();
 		}
-
+			else {
+				Task4 = new task(xcoord(),ycoord());
+				repaint();
+				Player.update();
+			}
+		}
 		if (sameCoords(Player, Task5)==true) {
-			task(Task5);
+			if (task(Task5)==true) {
+				taskCounter --;
+				Task5.dispose();
+				repaint();
 		}
-
+			else {
+				Task5 = new task(xcoord(),ycoord());
+				repaint();
+				Player.update();
+			}
+		}
 	}
-
+	
 	public String randomMiniGame() {
-		File taskfile = new File("Objects/minigames");
+		File taskfile = new File("Objects/minigames"); 
 		int totalLines = 0;
 
 		BufferedReader br = null;
@@ -102,7 +145,7 @@ public class GameFrame extends JPanel implements ActionListener{
 			int randomInt = random.nextInt(totalLines);
 			int count=0;
 			String icaocode;
-			while ( (icaocode = br.readLine()) != null) {
+			while ( (icaocode = br.readLine()) != null) {               
 				if (count == randomInt) {
 					br.close();
 					return icaocode;
@@ -116,7 +159,7 @@ public class GameFrame extends JPanel implements ActionListener{
 		} catch (IOException e) {
 			System.out.println("Unable to read file: " + taskfile.toString());
 		}
-		return null;
+		return null; 
 	}
 
 	private boolean sameCoords(player player1, task task) {
@@ -147,23 +190,21 @@ public class GameFrame extends JPanel implements ActionListener{
 	}
 
 	public boolean task(Classes.task task22taskIcon){
-
+		
 		String minigame = randomMiniGame();
 		String[] result = minigame.split(",");
-
+		
 		String userAnswer = JOptionPane.showInputDialog(result[0], JOptionPane.QUESTION_MESSAGE);
-
+		
 		if (userAnswer.equals(result[1])){
-			JOptionPane.showMessageDialog(null, "Correct, you recieved a coin!! :) ");
-			task22taskIcon.dispose();
-			taskCounter--;
+			JOptionPane.showMessageDialog(null, "Correct, you recieved a coin!! :) ");	
 			return true;
 		}
 		else {
 			JOptionPane.showMessageDialog(null, "Oh Noooo :(( you didnt get that right, better luck next time");
 			return false;
 		}
-
+		
 	}
 
 }

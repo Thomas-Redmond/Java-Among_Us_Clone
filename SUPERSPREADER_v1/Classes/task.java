@@ -17,6 +17,10 @@ public class task extends entity {
 		g2d.drawImage(getCoinImg(),x,y,null);
 	}
 	
+	public void undraw(Graphics2D g2d) {
+		g2d.dispose();
+	}
+	
 	public Image getCoinImg() {
 		ImageIcon ic = new ImageIcon("Objects/goldcoin.jpg");
 		Image i = ic.getImage();
@@ -34,7 +38,8 @@ public class task extends entity {
 	}
 
 	public void dispose() {
-		// TODO Auto-generated method stub
+		x = -500;
+		y = -500;
 		
 	}
 		

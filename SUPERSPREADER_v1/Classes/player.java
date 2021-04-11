@@ -8,24 +8,24 @@ import javax.swing.ImageIcon;
 
 public class player extends entity{
 
-	
+
 	int velx=0,vely=0;
 	public player(int x, int y) {
 		super(x, y);
-		
+
 	}
-	
+
 	public void update()
 	{
 		y+=vely;
 		x+=velx;
-		
+
 	}
-	
+
 	public void draw(Graphics2D g2d) {
 		g2d.drawImage(getPlayerImg(),x,y,null);
 	}
-	
+
 	public Image getPlayerImg() {
 		ImageIcon ic = new ImageIcon("Objects/blobby.jpg");
 		Image i = ic.getImage();
@@ -33,7 +33,7 @@ public class player extends entity{
 		ic= new ImageIcon(si);
 		return si;
 	}
-	
+
 	public void keyPressed(KeyEvent e) {
 		int key=e.getKeyCode();
 		if (x<400 && x>0 && y<300 && y>0)	{
@@ -61,12 +61,12 @@ public class player extends entity{
 				y=1;
 			}
 		}
-		System.out.println(y);
-	
+		
+
 	}
 	public void keyReleased(KeyEvent e) {
 		int key=e.getKeyCode();
-		
+
 		if (key == KeyEvent.VK_UP) {
 			vely = 0;
 		}else if (key == KeyEvent.VK_DOWN) {

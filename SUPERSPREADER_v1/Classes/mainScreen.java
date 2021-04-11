@@ -37,14 +37,14 @@ public class mainScreen {
 		frmSuperSpreader.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSuperSpreader.getContentPane().setLayout(null);
 
-		JLabel lblSpeader = new JLabel("SPEADER");
+		JLabel lblSpeader = new JLabel("SPREADER");
 		lblSpeader.setBackground(SystemColor.textHighlight);
 		lblSpeader.setForeground(SystemColor.menu);
 		lblSpeader.setFont(new Font("Verdana", Font.BOLD, 29));
-		lblSpeader.setBounds(39, 49, 174, 38);
+		lblSpeader.setBounds(39, 49, 222, 38);
 		frmSuperSpreader.getContentPane().add(lblSpeader);
 		
-		JButton joinbtn = new JButton("Begin game");
+		JButton joinbtn = new JButton("Begin Game");
 		joinbtn.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		joinbtn.addActionListener(new ActionListener() {
 		@Override
