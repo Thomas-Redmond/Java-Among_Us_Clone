@@ -22,4 +22,9 @@ public class entity {
 	
 	}
 
+	public void paintComponent(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
