@@ -67,7 +67,7 @@ public class gameContext {
 		txtpnItsYouAnd.setForeground(new Color(255, 255, 255));
 		txtpnItsYouAnd.setBackground(new Color(106, 90, 205));
 		txtpnItsYouAnd.setEditable(false);
-		txtpnItsYouAnd.setText("It's you and your teams responsability to not get blobbified!  \r\n\r\n....\r\n");
+		txtpnItsYouAnd.setText("It is your responsability to not get blobbified!  \r\n\r\nMove around the game board with the arrow keys. Try to collect all the gold coins before the time runs out or before Mr Blobby catches you !!\r\n\r\nGOOD LUCK! (you'll need it)");
 		frmSuperSpreader.getContentPane().add(txtpnItsYouAnd);
 		frmSuperSpreader.getContentPane().add(beginGameButton);
 	}
