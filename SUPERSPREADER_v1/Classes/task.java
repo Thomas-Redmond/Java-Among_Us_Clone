@@ -24,6 +24,7 @@ public class task extends entity {
 		ic= new ImageIcon(si);
 		return si;
 	}
+	
 
 	public Object getXBounds() {
 		return x;
@@ -33,9 +34,5 @@ public class task extends entity {
 		return y;
 	}
 
-	public void dispose() {
-		// TODO Auto-generated method stub
 		
-	}
-		
-	}
+}

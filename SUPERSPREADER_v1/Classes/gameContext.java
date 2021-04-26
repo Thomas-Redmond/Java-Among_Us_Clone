@@ -37,9 +37,18 @@ public class gameContext {
 		initialize();
 	}
 
+	public static int initvariable() {
+		var=0;
+		return var;
+	}
+
+
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	static int var=0;
+	static int flagend=0;
 	private void initialize() {
 		frmSuperSpreader = new JFrame();
 		frmSuperSpreader.setResizable(false);
@@ -53,10 +62,13 @@ public class gameContext {
 		beginGameButton.setBounds(173, 271, 243, 29);
 		beginGameButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				initflag();
 				frmSuperSpreader.setVisible(false);
 				gameScreen nw = new gameScreen();
 				nw.setVisible(true);
 				frmSuperSpreader.dispose();
+				initvariable();
+				System.out.println(flagend);
 			}
 		});
 		frmSuperSpreader.getContentPane().setLayout(null);
@@ -67,10 +79,37 @@ public class gameContext {
 		txtpnItsYouAnd.setForeground(new Color(255, 255, 255));
 		txtpnItsYouAnd.setBackground(new Color(106, 90, 205));
 		txtpnItsYouAnd.setEditable(false);
-		txtpnItsYouAnd.setText("It is your responsability to not get blobbified!  \r\n\r\nMove around the game board with the arrow keys. Try to collect all the gold coins before the time runs out or before Mr Blobby catches you !!\r\n\r\nGOOD LUCK! (you'll need it)");
+		txtpnItsYouAnd.setText("It's your responsability to not get blobbified!  \r\n\r\n....\r\n");
 		frmSuperSpreader.getContentPane().add(txtpnItsYouAnd);
 		frmSuperSpreader.getContentPane().add(beginGameButton);
 	}
+
+	public static int variable(int v) {
+		if (var!=0)
+		{
+			return 1;
+		}
+		else if (var==v) {
+			return 0;
+		}
+		return (Integer) null;
+	}
+
+	public static void updvariable(int i) {
+		var=i;
+		variable(var);
+	}
+
+	public static int flagend(int v) {
+		flagend=1;
+		return flagend;
+	}
+	public static int initflag() {
+		flagend=0;
+		return flagend;
+	}
+
+
 
 	public void setVisible(boolean b) {
 		frmSuperSpreader.setVisible(b);
