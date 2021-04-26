@@ -12,9 +12,9 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class losingscreen {
+public class infectedScreen {
 
-	JFrame frame;
+	private JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -23,7 +23,7 @@ public class losingscreen {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					losingscreen window = new losingscreen();
+					infectedScreen window = new infectedScreen();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class losingscreen {
 	/**
 	 * Create the application.
 	 */
-	public losingscreen() {
+	public infectedScreen() {
 		initialize();
 	}
 
@@ -50,28 +50,28 @@ public class losingscreen {
 		
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("next time!");
 		lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1_1.setForeground(Color.PINK);
-		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_1_1_1.setBounds(310, 100, 114, 37);
+		lblNewLabel_1_1_1_1.setForeground(Color.GREEN);
+		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNewLabel_1_1_1_1.setBounds(30, 200, 114, 37);
 		frame.getContentPane().add(lblNewLabel_1_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Better luck");
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setForeground(Color.PINK);
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_1_1.setBounds(310, 74, 114, 37);
+		lblNewLabel_1_1_1.setForeground(Color.GREEN);
+		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblNewLabel_1_1_1.setBounds(20, 180, 114, 37);
 		frame.getContentPane().add(lblNewLabel_1_1_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("You Lost :(");
-		lblNewLabel_1_1.setForeground(Color.PINK);
+		JLabel lblNewLabel_1_1 = new JLabel("You got ");
+		lblNewLabel_1_1.setForeground(Color.GREEN);
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1_1.setBounds(310, 26, 187, 37);
+		lblNewLabel_1_1.setBounds(30, 26, 187, 37);
 		frame.getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1 = new JLabel("BOO HOO !!");
-		lblNewLabel_1.setForeground(Color.PINK);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(37, 11, 187, 37);
+		JLabel lblNewLabel_1 = new JLabel("INFECTED !!");
+		lblNewLabel_1.setForeground(Color.GREEN);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lblNewLabel_1.setBounds(30, 50, 187, 37);
 		frame.getContentPane().add(lblNewLabel_1);
 
 		JButton btnMainMenu = new JButton("Main Menu");
@@ -89,7 +89,7 @@ public class losingscreen {
 		frame.getContentPane().add(btnMainMenu);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(losingscreen.class.getResource("/Objects/picture 7.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(infectedScreen.class.getResource("/Objects/endgame.jpg")));
 		lblNewLabel.setBounds(-58, 0, 492, 352);
 		frame.getContentPane().add(lblNewLabel);
 	}

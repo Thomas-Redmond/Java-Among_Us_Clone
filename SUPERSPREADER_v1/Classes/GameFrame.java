@@ -1,5 +1,6 @@
 package Classes;
 
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -14,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import Classes.SuppressWarnings;
 import Classes.task;
 
 @SuppressWarnings("serial")
@@ -29,13 +29,14 @@ public class GameFrame extends JPanel implements ActionListener{
 	task Task4;
 	task Task5;
 	static int taskCounter;
+	
 
 	public GameFrame() {
 		setFocusable(true);
 		// create new player, and new blobby monster
 		Player = new player(100,100);
-		monster = new blobby(0,0);
-		taskCounter=5;
+		monster = new blobby(200,200);
+		taskCounter = 5;
 		addKeyListener(new keyadapt(Player));
 		Task1 = new task(xcoord(),ycoord());
 		Task2 = new task(xcoord(),ycoord());
@@ -47,9 +48,7 @@ public class GameFrame extends JPanel implements ActionListener{
 
 
 	}
-	public int tasksRemaining() {
-		return taskCounter;
-	}
+	
 
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -72,9 +71,13 @@ public class GameFrame extends JPanel implements ActionListener{
 
 		if (sameCoords(Player, Task1)==true){			
 			if (task(Task1)==true) {
-					taskCounter --;
-					Task1.dispose();
-					repaint();
+				taskCounter=taskCounter-1;
+				Task1 = new task(-10,-10);
+				tasksRemaining();
+				Player.update();
+				repaint();
+				
+				
 			}
 			else {
 				Task1 = new task(xcoord(),ycoord());
@@ -84,9 +87,14 @@ public class GameFrame extends JPanel implements ActionListener{
 		}
 		if (sameCoords(Player, Task2)==true) {
 			if (task(Task2)==true) {
-				taskCounter --;
-				Task2.dispose();
+				taskCounter=taskCounter-1;
+				Task2 = new task(-10,-10);
+				tasksRemaining();
+				Player.update();
 				repaint();
+				
+				
+				
 		}
 			else {
 				Task2 = new task(xcoord(),ycoord());
@@ -97,9 +105,13 @@ public class GameFrame extends JPanel implements ActionListener{
 
 		if (sameCoords(Player, Task3)==true) {
 			if (task(Task3)==true) {
-				taskCounter --;
-				Task3.dispose();
+				taskCounter=taskCounter-1;
+				Task3 = new task(-10,-10);
+				tasksRemaining();
+				Player.update();
 				repaint();
+				
+				
 		}
 			else {
 				Task3 = new task(xcoord(),ycoord());
@@ -109,9 +121,12 @@ public class GameFrame extends JPanel implements ActionListener{
 		}
 		if (sameCoords(Player, Task4)==true) {
 			if (task(Task4)==true) {
-				taskCounter --;
-				Task4.dispose();
+				taskCounter=taskCounter-1;
+				Task4 = new task(-10,-10);
+				tasksRemaining();
+				Player.update();
 				repaint();
+				
 		}
 			else {
 				Task4 = new task(xcoord(),ycoord());
@@ -121,16 +136,25 @@ public class GameFrame extends JPanel implements ActionListener{
 		}
 		if (sameCoords(Player, Task5)==true) {
 			if (task(Task5)==true) {
-				taskCounter --;
-				Task5.dispose();
+				taskCounter=taskCounter-1;
+				Task5 = new task(-10,-10);
+				tasksRemaining();
+				Player.update();
 				repaint();
+				
 		}
+			
 			else {
 				Task5 = new task(xcoord(),ycoord());
 				repaint();
 				Player.update();
 			}
 		}
+		
+	}
+	public static int tasksRemaining() {
+		return taskCounter;
+		
 	}
 
 	
@@ -203,17 +227,24 @@ public class GameFrame extends JPanel implements ActionListener{
 
 		String minigame = randomMiniGame();
 		String[] result = minigame.split(",");
-
+		
 		String userAnswer = JOptionPane.showInputDialog(result[0], JOptionPane.QUESTION_MESSAGE);
+		
 
-		if (userAnswer.equals(result[1])){
+		if (userAnswer==null) {
+			return false;
+		}
+		else if (userAnswer.equals(result[1])){
 			JOptionPane.showMessageDialog(null, "Correct, you recieved a coin!! :) ");
 			return true;
 		}
-		else {
+		
+		else{
 			JOptionPane.showMessageDialog(null, "Oh Noooo :(( you didnt get that right, better luck next time");
 			return false;
 		}
+	
+	
 
 	}
 

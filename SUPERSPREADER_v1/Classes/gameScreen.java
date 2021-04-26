@@ -17,10 +17,12 @@ public class gameScreen {
 	private JFrame frmSuperSpreader;
 	public JLabel timelabel;
 	private JTextField timerfield;
+	private JTextField counterfield;
 	private LocalDateTime startTime;
 	private Timer timer;
 	private Duration duration = Duration.ofMinutes(15);
 	private JTextField textField;
+	
 
 	/**
 	 * Launch the application.
@@ -68,7 +70,7 @@ public class gameScreen {
 		btnNewButton.setBounds(473, 11, 126, 33);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use W, A, S, D on the keyboard to move. Type into the text field and hit the enter key to send the chat",
+				JOptionPane.showMessageDialog(frmSuperSpreader,"Instructions: Use Arrows on the keyboard to move. Type into the text field and hit the enter key to send the chat",
 						"How To Play",JOptionPane.PLAIN_MESSAGE);
 				/*
 				 * HowToPlay nw = new HowToPlay(); nw.setVisible(true);
@@ -117,11 +119,9 @@ public class gameScreen {
 		panel.add(internalFrame);
 		GameFrame g = new GameFrame();
 		internalFrame.add(g);
-		internalFrame.setVisible(true);
+		internalFrame.setVisible(true);	
 
-
-
-		JLabel taskLabel = new JLabel("Task's left:" + tasksRemaining());
+		JLabel taskLabel = new JLabel("Task's left:");
 		taskLabel.setForeground(Color.WHITE);
 		taskLabel.setBounds(10, 14, 91, 23);
 		taskLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -139,6 +139,14 @@ public class gameScreen {
 		timerfield.setEditable(false);
 		frmSuperSpreader.getContentPane().add(timerfield);
 		timerfield.setColumns(10);
+		
+		counterfield = new JTextField();
+		counterfield.setHorizontalAlignment(SwingConstants.CENTER);
+		counterfield.setBounds(85, 17, 118, 23);
+		counterfield.setEditable(false);
+		frmSuperSpreader.getContentPane().add(counterfield);
+		counterfield.setColumns(10);
+		
 
 
 		textField = new JTextField();
@@ -153,24 +161,41 @@ public class gameScreen {
 
 		// https://stackoverflow.com/questions/48046501/create-a-java-gui-countdown-timer-that-starts-with-user-input
 		timer = new Timer(500, new ActionListener() {
-			@Override
 			
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				LocalDateTime now = LocalDateTime.now();
 				Duration runningTime = Duration.between(startTime, now);
 				Duration timeLeft = duration.minus(runningTime);
-			
+				
 				if (timeLeft.isZero() || timeLeft.isNegative()) {
-					gameLost();	
+					if (Classes.gameContext.variable(0)==0) {
+						gameLost();
+						Classes.gameContext.updvariable(1);
+					}
 				}
-				else if (tasksRemaining() == 0) { 
-					gameWon();
-					
-				}  
+				if (Classes.blobby.infected()==1) {
+					if (Classes.gameContext.variable(0)==0) {
+						Classes.gameContext.initflag();
+						gameInfected();
+						Classes.gameContext.updvariable(1);
+						
+					}
+				}
+				if (Classes.GameFrame.tasksRemaining()==0) {
+					if (Classes.gameContext.variable(0)==0) {
+						gameWon();
+						Classes.gameContext.updvariable(1);
+					}
+				}
+				
+				counterfield.setText(Integer.toString(Classes.GameFrame.taskCounter));
 				timerfield.setText(format(timeLeft));
+				
 			}
 		});
 	}
+	
 
 	public void gameLost() {
 		frmSuperSpreader.setVisible(false);
@@ -180,15 +205,18 @@ public class gameScreen {
 		
 	}
 	
+	public void gameInfected() {
+		frmSuperSpreader.setVisible(false);
+		infectedScreen nw = new infectedScreen();
+		nw.setVisible(true); 
+		frmSuperSpreader.dispose();
+	}
+	
 	public void gameWon() {
 		frmSuperSpreader.setVisible(false);
 		winningScreen nw = new winningScreen();
-		nw.setVisible(true); 
+		nw.setVisible(true);
 		frmSuperSpreader.dispose(); 
-	}
-	private int tasksRemaining() {
-		int tasksleft = Classes.GameFrame.taskCounter;
-		return tasksleft;
 	}
 
 	protected String format(Duration duration) {
