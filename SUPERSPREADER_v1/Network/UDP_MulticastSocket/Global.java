@@ -6,7 +6,7 @@ public class Global {
 
     static MulticastSocketClient network = null;
     static gameScreen gameScreen = null;
-
+    //
 
     public static Classes.gameScreen getGameScreen() {
         return gameScreen;
